@@ -3,8 +3,6 @@ import '../../utils/util.dart';
 import 'package:flutter/material.dart';
 
 class HomeModel extends Models {
-  ///  State fields for stateful widgets in this page.
-
   // State field(s) for TextField widget.
   final textFieldKey = GlobalKey();
   TextEditingController? textController;
@@ -18,6 +16,4 @@ class HomeModel extends Models {
   void initState(BuildContext context) {}
 
   void dispose() {}
-
-  /// Additional helper methods are added here.
 }

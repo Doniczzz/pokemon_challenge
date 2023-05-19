@@ -4,7 +4,7 @@ import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
 
-class ListPokemonsApiCallCall {
+class ListPokemonsApiCall {
   static Future<ApiCallResponse> call() {
     return ApiManager.instance.makeApiCall(
       callName: 'listPokemonsApiCall',
@@ -30,7 +30,7 @@ class ListPokemonsApiCallCall {
       );
 }
 
-class PokemonApiCallCall {
+class PokemonApiCall {
   static Future<ApiCallResponse> call({
     String? id = '',
   }) {

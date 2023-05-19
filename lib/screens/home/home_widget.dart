@@ -83,7 +83,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           child:
               // Container with api call
               FutureBuilder<ApiCallResponse>(
-            future: ListPokemonsApiCallCall.call(),
+            future: ListPokemonsApiCall.call(),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
                 return Center(
@@ -188,7 +188,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   return const Iterable<
                                                       String>.empty();
                                                 }
-                                                return (ListPokemonsApiCallCall
+                                                return (ListPokemonsApiCall
                                                         .name(
                                                   containerListPokemonsApiCallResponse
                                                       .jsonBody,
@@ -260,7 +260,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                   ),
                                                   onFieldSubmitted: (_) async {
                                                     _model.apiResultdux =
-                                                        await PokemonApiCallCall
+                                                        await PokemonApiCall
                                                             .call(
                                                       id: functions
                                                           .firstWordToMinus(
@@ -383,7 +383,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                           child: Builder(
                             builder: (context) {
                               final pokemonsNoSearch =
-                                  ListPokemonsApiCallCall.listPokemon(
+                                  ListPokemonsApiCall.listPokemon(
                                         containerListPokemonsApiCallResponse
                                             .jsonBody,
                                       )?.toList() ??
@@ -402,7 +402,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                 EdgeInsets.only(bottom: 10),
                                             child:
                                                 FutureBuilder<ApiCallResponse>(
-                                              future: PokemonApiCallCall.call(
+                                              future: PokemonApiCall.call(
                                                 id: (index + 1).toString(),
                                               ),
                                               builder: (context, snapshot) {
@@ -463,9 +463,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                           padding:
                                                               EdgeInsets.all(8),
                                                           child: Hero(
-                                                            tag:
-                                                                PokemonApiCallCall
-                                                                    .img(
+                                                            tag: PokemonApiCall
+                                                                .img(
                                                               containerPokemonApiCallResponse
                                                                   .jsonBody,
                                                             ),
@@ -478,7 +477,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                           8),
                                                               child:
                                                                   Image.network(
-                                                                PokemonApiCallCall
+                                                                PokemonApiCall
                                                                     .img(
                                                                   containerPokemonApiCallResponse
                                                                       .jsonBody,
@@ -543,7 +542,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                       ),
                                                                     ),
                                                                     TextSpan(
-                                                                      text: PokemonApiCallCall
+                                                                      text: PokemonApiCall
                                                                           .weight(
                                                                         containerPokemonApiCallResponse
                                                                             .jsonBody,
@@ -598,7 +597,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                                             String>(
                                                                           functions
                                                                               .separateStrings(
-                                                                            (PokemonApiCallCall.typeNames(
+                                                                            (PokemonApiCall.typeNames(
                                                                               containerPokemonApiCallResponse.jsonBody,
                                                                             ) as List)
                                                                                 .map<String>((s) => s.toString())
